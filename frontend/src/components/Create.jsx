@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Create = () => {
-  const [name, setname] = useState();
-  const [price, setprice] = useState();
-  const [description, setdescription] = useState();
+  const [name, setname] = useState("");
+  const [price, setprice] = useState("");
+  const [description, setdescription] = useState("");
   const navigate = useNavigate();
   const Register = () => {
     const userInfo = localStorage.getItem("userInfo");
@@ -50,7 +50,6 @@ const Create = () => {
           }}
         />
         <input
-          type="email"
           name="email"
           placeholder="Price"
           onChange={(event) => {
