@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
-  const [name, setname] = useState();
-  const [email, setemail] = useState();
-  const [pass, setpass] = useState();
+  const [name, setname] = useState("");
+  const [email, setemail] = useState("");
+  const [pass, setpass] = useState("");
   const navigate = useNavigate();
   useEffect(() => {
     const userInfo = localStorage.getItem("userInfo");
@@ -12,7 +12,8 @@ const Register = () => {
       navigate("/home");
     }
   }, []);
-  const Register = () => {
+  const Register = (e) => {
+    e.preventDefault();
     if (!name || !email || !pass) {
       alert("Please fill all the fields");
       return;
@@ -38,6 +39,7 @@ const Register = () => {
           }
         });
     } catch (error) {
+      alert("User already exists");
       console.log(error);
     }
   };

@@ -6,7 +6,8 @@ const Create = () => {
   const [price, setprice] = useState("");
   const [description, setdescription] = useState("");
   const navigate = useNavigate();
-  const Register = () => {
+  const Register = (e) => {
+    e.preventDefault();
     const userInfo = localStorage.getItem("userInfo");
     if (!name || !price || !description) {
       alert("Please fill all the fields");
